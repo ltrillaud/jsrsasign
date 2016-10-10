@@ -23,9 +23,9 @@ declare module KJUR {
     module jws {
         module JWS {
             function readSafeJSONString(token: string): any;
-            function verifyJWT(token: string, key: string, data: Object): boolean;
+            function verifyJWT(token: string, key: any, data: Object): boolean;
             function parse(jwt: any);
-            function verify(sJWS: string, key: string, acceptAlgs: string);
+            function verify(sJWS: string, key: any, acceptAlgs?: string);
             function sign(alg: string, spHead: string, spPayload: string, key: string, pass?: string)
         }
         module IntDate {
@@ -292,6 +292,7 @@ declare class TokenHeader {
     kid: string;
 }
 declare function hextob64u(value: any);
+declare function b64utoutf8(value: string): string;
 
 declare module X509 {
     function getPublicKeyFromCertPEM(key: any);
