@@ -298,26 +298,26 @@ declare module X509 {
 }
 
 declare interface TokenClaims {
-    nonce: string;
-    family_name: string;
-    ver: string;
-    sub: string;
-    city: string;
-    iss: string;
-    jobTitle: string;
-    oid: string;
-    state: string;
-    name: string;
-    acr: string;
-    streetAddress: string;
-    given_name: string;
-    exp: string;
-    auth_time: string;
-    postalCode: string;
-    iat: string;
-    country: string;
-    nbf: string;
-    aud: string;
-    email: string;
-    jti: string;
+    nonce?: string;
+    family_name?: string;
+    ver?: string;
+    sub?: string;
+    city?: string;
+    iss?: string;
+    jobTitle?: string;
+    oid?: string;
+    state?: string;
+    name?: string;
+    acr?: string;
+    streetAddress?: string;
+    given_name?: string;
+    exp?: number;
+    auth_time?: string;
+    postalCode?: string;
+    iat?: number;
+    country?: string;
+    nbf?: number;
+    aud?: string;
+    email?: string;
+    jti?: string;
 }
