@@ -25,7 +25,15 @@ declare module KJUR {
             function readSafeJSONString(token: string): any;
             function verifyJWT(token: string, key: string, data: Object): boolean;
             function parse(jwt: any);
-            function verify(jwt, key, AllowedSigningAlgs);
+            function verify(sJWS: string, key: string, acceptAlgs: string);
+            function sign(alg: string, spHead: string, spPayload: string, key: string, pass?: string)
+        }
+        module IntDate {
+            function get(s: string): number;
+            function getZulu(s: string): number;
+            function getNow(): number;
+            function intDate2UTCString(intDate: number): string;
+            function intDate2Zulu(intDate: number): string;
         }
     }
     module crypto {
@@ -289,7 +297,7 @@ declare module X509 {
     function getPublicKeyFromCertPEM(key: any);
 }
 
-declare class TokenClaims {
+declare interface TokenClaims {
     nonce: string;
     family_name: string;
     ver: string;
@@ -311,4 +319,5 @@ declare class TokenClaims {
     nbf: string;
     aud: string;
     email: string;
+    jti: string;
 }
